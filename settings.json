@@ -1,0 +1,25 @@
+{
+  "Installers": [
+    {
+      "Item1": 0,
+      "Item2": "Putty 0.70 (x64)",
+      "Item3": "./Installers/putty-64bit-0.70-installer.msi",
+      "Item4": true,
+      "Item5": "Full installation;No uTorrent installation"
+    },
+    {
+      "Item1": 1,
+      "Item2": "Notepad++ 7.6 (x64)",
+      "Item3": "npp.7.6.Installer.x64.exe",
+      "Item4": false,
+      "Item5": "Full installation;No uTorrent installation"
+    },
+    {
+      "Item1": 2,
+      "Item2": "uTorrent 3.5 (x64)",
+      "Item3": "http://letoltes.szoftverbazis.hu/PuykE8aDyjBvpL7VUHxotw/1543150301/utorrent-35/utorrent_3.5.exe",
+      "Item4": false,
+      "Item5": "Full installation;Only uTorrent installation"
+    }
+  ]
+}
