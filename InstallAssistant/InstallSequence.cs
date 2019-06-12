@@ -1,6 +1,8 @@
 ﻿using InstallAssistant.InstallSource;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace InstallAssistant
 {
@@ -10,7 +12,14 @@ namespace InstallAssistant
         {
             foreach (var installer in this.Where(installer => installer.Enabled))
             {
-                installer.Start();
+				try
+				{
+	                installer.Start();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+				}
             }
         }
     }

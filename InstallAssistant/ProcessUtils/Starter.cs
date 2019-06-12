@@ -6,18 +6,14 @@ namespace InstallAssistant.ProcessUtils
     {
         public void Start(string installerPath, string arguments = null)
         {
-            try
-            {
-                var process = Process.Start(
-                    new ProcessStartInfo
-                    {
-                        Arguments = arguments,
-                        UseShellExecute = true,
-                        FileName = installerPath
-                    });
-                process?.WaitForExit();
-            }
-            catch { }
+            var process = Process.Start(
+                new ProcessStartInfo
+                {
+                    Arguments = arguments,
+                    UseShellExecute = true,
+                    FileName = installerPath
+                });
+            process?.WaitForExit();
         }
     }
 }

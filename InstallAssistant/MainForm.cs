@@ -1,10 +1,8 @@
-﻿using InstallAssistant.InstallSource;
-using System.IO;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace InstallAssistant
 {
-    public partial class MainForm : Form
+	public partial class MainForm : Form
     {
         public static InstallSequence InstallSequence;
         
@@ -19,7 +17,8 @@ namespace InstallAssistant
             {
                 ComboBox.Items.Add(group);
             }
-        }
+			ComboBox.SelectedIndex = 0;
+		}
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {

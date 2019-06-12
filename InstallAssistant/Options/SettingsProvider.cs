@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using InstallAssistant.InstallSource;
+using Newtonsoft.Json;
 using System.IO;
 
 namespace InstallAssistant.Options
@@ -15,7 +16,10 @@ namespace InstallAssistant.Options
             {
                 var creator = new FileCreator();
                 var result = new Settings();
-                creator.CreateNewFile(SettingsFileName, result.ToString());
+				result.Installers.Add((InstallerType.FromDisk, "Disk installer", @"C:\Temp\Setup.exe", true, "All;From disk only"));
+				result.Installers.Add((InstallerType.FromEmbeddedResource, "Embedded resource installer", @"InstallAssistant\Resources\Setup.exe", true, "All;From embedded resource only"));
+				result.Installers.Add((InstallerType.FromInternet, "Internet installer", @"http:\\mycompany.com\Setup.exe", true, "All;From internet only"));
+				creator.CreateNewFile(SettingsFileName, result.ToString());
                 return result;
             }
 

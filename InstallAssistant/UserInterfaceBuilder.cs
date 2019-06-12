@@ -20,12 +20,13 @@ namespace InstallAssistant
                     Tag = installer,
                     Checked = installer.Enabled,
                     Text = installer.Name,
-                    TextAlign = ContentAlignment.MiddleLeft
+                    TextAlign = ContentAlignment.MiddleLeft,
+					Width = 200
                 };
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
 
                 layoutPanel.Controls.Add(checkBox, 0, rowIndex++);
-                layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+                layoutPanel.RowStyles.Add(new RowStyle());
             }
             layoutPanel.Controls.Add(new Label(), 0, rowIndex);
         }
