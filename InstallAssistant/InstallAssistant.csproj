@@ -100,5 +100,11 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mtf.Languages\Mtf.Languages.csproj">
+      <Project>{6E21F7E4-F3AA-433B-9E27-666286234025}</Project>
+      <Name>Mtf.Languages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
