@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallAssistant", "InstallAssistant\InstallAssistant.csproj", "{35205BFC-B019-4F2B-A2DE-5D1F901B81CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mtf.Languages", "Mtf.Languages\Mtf.Languages.csproj", "{6E21F7E4-F3AA-433B-9E27-666286234025}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{35205BFC-B019-4F2B-A2DE-5D1F901B81CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35205BFC-B019-4F2B-A2DE-5D1F901B81CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35205BFC-B019-4F2B-A2DE-5D1F901B81CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E21F7E4-F3AA-433B-9E27-666286234025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E21F7E4-F3AA-433B-9E27-666286234025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E21F7E4-F3AA-433B-9E27-666286234025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E21F7E4-F3AA-433B-9E27-666286234025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

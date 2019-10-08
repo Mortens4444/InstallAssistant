@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using Mtf.Languages;
+using Mtf.Languages.Utils;
 
 namespace InstallAssistant
 {
@@ -18,6 +20,8 @@ namespace InstallAssistant
                 ComboBox.Items.Add(group);
             }
 			ComboBox.SelectedIndex = 0;
+
+			Lng.Translate(this);
 		}
 
         private void MainForm_Load(object sender, System.EventArgs e)
@@ -32,7 +36,7 @@ namespace InstallAssistant
 
         private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            InstallationStrategy.SelectInstallers(ComboBox.SelectedItem.ToString(), LayoutPanel.Controls);
+            InstallationStrategy.SelectInstallers(Lng.Elem(Language.English, ComboBox.SelectedItem.ToString()), LayoutPanel.Controls);
         }
     }
 }
