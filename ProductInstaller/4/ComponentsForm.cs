@@ -1,16 +1,17 @@
 ﻿using System.Windows.Forms;
+using InstallAssistant;
 using Mtf.Languages;
 using Mtf.Languages.Utils;
 
-namespace InstallAssistant
+namespace ProductInstaller
 {
-	public partial class MainForm : Form
+	public partial class ComponentsForm : Form
     {
         public static InstallSequence InstallSequence;
         
         private readonly UserInterfaceBuilder userInterfaceBuilder = new UserInterfaceBuilder();
 
-        public MainForm()
+        public ComponentsForm()
         {
             InitializeComponent();
             var installSequence = InstallSequenceBuilder.Get();
@@ -29,10 +30,10 @@ namespace InstallAssistant
             userInterfaceBuilder.CreateUserInterface(LayoutPanel, InstallSequence);
         }
 
-        private void Close(object sender, System.EventArgs e)
+        private void BtnCancel_Click(object sender, System.EventArgs e)
         {
-            Close();
-        }
+			ExitIntent.Check();
+		}
 
         private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {

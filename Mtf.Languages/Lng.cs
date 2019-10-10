@@ -39,10 +39,6 @@ namespace Mtf.Languages
 		/// <param name="controls">The ControlCollection to be translated.</param>
 		public static void Translate(ControlCollection controls)
 		{
-			if (TranslationCore.Language == Language.English)
-			{
-				return;
-			}
 			foreach (var control in controls)
 			{
 				if (control is WebBrowser)
