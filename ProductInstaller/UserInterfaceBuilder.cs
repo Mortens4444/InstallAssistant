@@ -1,8 +1,10 @@
-﻿using InstallAssistant.InstallSource;
+﻿using InstallAssistant;
+using InstallAssistant.InstallSource;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace InstallAssistant
+namespace ProductInstaller
 {
     class UserInterfaceBuilder
     {
@@ -31,7 +33,7 @@ namespace InstallAssistant
             layoutPanel.Controls.Add(new Label(), 0, rowIndex);
         }
 
-        private void CheckBox_CheckedChanged(object sender, System.EventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             var checkBox = sender as CheckBox;
             var installer = checkBox.Tag as Installer;

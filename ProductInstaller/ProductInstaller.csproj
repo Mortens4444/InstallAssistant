@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35205BFC-B019-4F2B-A2DE-5D1F901B81CC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>InstallAssistant</RootNamespace>
-    <AssemblyName>InstallAssistant</AssemblyName>
+    <ProjectGuid>{490F51A7-6AA3-43A6-9991-FD3AB2B09A3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProductInstaller</RootNamespace>
+    <AssemblyName>ProductInstaller</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,39 +27,62 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InstallationStrategy.cs" />
-    <Compile Include="InstallSequenceBuilder.cs" />
-    <Compile Include="InstallSequence.cs" />
-    <Compile Include="InstallSource\Installer.cs" />
-    <Compile Include="InstallSource\InstallerType.cs" />
-    <Compile Include="InstallSource\InstallFromDisk.cs" />
-    <Compile Include="InstallSource\InstallFromEmbeddedResource.cs" />
-    <Compile Include="InstallSource\InstallFromInternet.cs" />
-    <Compile Include="Options\FileCreator.cs" />
-    <Compile Include="Options\Reader.cs" />
-    <Compile Include="Options\Settings.cs" />
-    <Compile Include="Options\SettingsProvider.cs" />
-    <Compile Include="ProcessUtils\Starter.cs" />
+    <Compile Include="1\LanguageSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1\LanguageSelectorForm.Designer.cs">
+      <DependentUpon>LanguageSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3\LicenseAgreementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3\LicenseAgreementForm.Designer.cs">
+      <DependentUpon>LicenseAgreementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4\ComponentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4\ComponentsForm.Designer.cs">
+      <DependentUpon>ComponentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExitIntent.cs" />
+    <Compile Include="ConfirmBox.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterfaceBuilder.cs" />
+    <EmbeddedResource Include="1\LanguageSelectorForm.resx">
+      <DependentUpon>LanguageSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3\LicenseAgreementForm.resx">
+      <DependentUpon>LicenseAgreementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4\ComponentsForm.resx">
+      <DependentUpon>ComponentsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -68,8 +91,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,12 +103,24 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InstallAssistant\InstallAssistant.csproj">
+      <Project>{35205bfc-b019-4f2b-a2de-5d1f901b81cc}</Project>
+      <Name>InstallAssistant</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mtf.Languages\Mtf.Languages.csproj">
-      <Project>{6E21F7E4-F3AA-433B-9E27-666286234025}</Project>
+      <Project>{6e21f7e4-f3aa-433b-9e27-666286234025}</Project>
       <Name>Mtf.Languages</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VerticalLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
