@@ -114,7 +114,6 @@
             this.AcceptButton = this.BtnFinish;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BtnExit;
             this.ClientSize = new System.Drawing.Size(469, 361);
             this.Controls.Add(this.GroupBox);
             this.MaximizeBox = false;
