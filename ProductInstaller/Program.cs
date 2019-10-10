@@ -1,5 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Security.Principal;
 using System.Windows.Forms;
+using MessageBoxes;
 using ProductInstaller._1;
 using ProductInstaller._2;
 using ProductInstaller._3;
@@ -15,6 +19,8 @@ namespace ProductInstaller
 		[STAThread]
 		static void Main()
 		{
+			UAC.Elevate();
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
