@@ -3,7 +3,7 @@ using InstallAssistant;
 using Mtf.Languages;
 using Mtf.Languages.Utils;
 
-namespace ProductInstaller
+namespace ProductInstaller._4
 {
 	public partial class ComponentsForm : Form
     {
@@ -20,9 +20,9 @@ namespace ProductInstaller
             {
                 ComboBox.Items.Add(group);
             }
-			ComboBox.SelectedIndex = 0;
 
 			Lng.Translate(this);
+			ComboBox.SelectedIndex = 0;
 		}
 
         private void MainForm_Load(object sender, System.EventArgs e)

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using ProductInstaller._1;
 using ProductInstaller._2;
 using ProductInstaller._3;
+using ProductInstaller._4;
 
 namespace ProductInstaller
 {
@@ -17,28 +18,36 @@ namespace ProductInstaller
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			LanguageSelection:
+		    LanguageSelection:
 			var languageSelectorForm = new LanguageSelectorForm();
-			languageSelectorForm.ShowDialog();
+		    if (languageSelectorForm.ShowDialog() == DialogResult.OK)
+		    {
+		        Welcome:
+		        var welcomeForm = new WelcomeForm();
+		        DialogResult dialogResult;
+		        if ((dialogResult = welcomeForm.ShowDialog()) == DialogResult.No)
+		        {
+		            goto LanguageSelection;
+		        }
 
-			Welcome:
-			var welcomeForm = new WelcomeForm();
-			if (welcomeForm.ShowDialog() == DialogResult.No)
-			{
-				goto LanguageSelection;
-			}
+		        if (dialogResult == DialogResult.OK)
+		        {
+		            var licenseAgreementForm = new LicenseAgreementForm();
+		            if ((dialogResult = licenseAgreementForm.ShowDialog()) == DialogResult.No)
+		            {
+		                goto Welcome;
+		            }
 
-			var licenseAgreementForm = new LicenseAgreementForm();
-			if (licenseAgreementForm.ShowDialog() == DialogResult.No)
-			{
-				goto Welcome;
-			}
-
-			var componentsForm = new ComponentsForm();
-			if (componentsForm.ShowDialog() == DialogResult.OK)
-			{
-				ComponentsForm.InstallSequence.ExecuteEnabledInstallers();
-			}
+		            if (dialogResult == DialogResult.OK)
+		            {
+		                var componentsForm = new ComponentsForm();
+		                if (componentsForm.ShowDialog() == DialogResult.OK)
+		                {
+		                    ComponentsForm.InstallSequence.ExecuteEnabledInstallers();
+		                }
+		            }
+		        }
+		    }
 		}
 	}
 }
