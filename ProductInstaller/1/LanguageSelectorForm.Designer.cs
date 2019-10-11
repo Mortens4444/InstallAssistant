@@ -31,11 +31,11 @@
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnNext = new System.Windows.Forms.Button();
             this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.LblChooseLanguage = new System.Windows.Forms.Label();
             this.PbVerticalLogo = new System.Windows.Forms.PictureBox();
             this.Panel = new System.Windows.Forms.Panel();
-            this.LvLanguages = new System.Windows.Forms.ListView();
+            this.LblChooseLanguage = new System.Windows.Forms.Label();
             this.LblWelcome = new System.Windows.Forms.Label();
+            this.LvLanguages = new System.Windows.Forms.ListView();
             this.LayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbVerticalLogo)).BeginInit();
             this.Panel.SuspendLayout();
@@ -81,15 +81,6 @@
             this.LayoutPanel.Size = new System.Drawing.Size(457, 281);
             this.LayoutPanel.TabIndex = 4;
             // 
-            // LblChooseLanguage
-            // 
-            this.LblChooseLanguage.AutoSize = true;
-            this.LblChooseLanguage.Location = new System.Drawing.Point(3, 93);
-            this.LblChooseLanguage.Name = "LblChooseLanguage";
-            this.LblChooseLanguage.Size = new System.Drawing.Size(228, 13);
-            this.LblChooseLanguage.TabIndex = 6;
-            this.LblChooseLanguage.Text = "Please select a language for the install process";
-            // 
             // PbVerticalLogo
             // 
             this.PbVerticalLogo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,6 +102,27 @@
             this.Panel.Size = new System.Drawing.Size(287, 275);
             this.Panel.TabIndex = 2;
             // 
+            // LblChooseLanguage
+            // 
+            this.LblChooseLanguage.AutoSize = true;
+            this.LblChooseLanguage.Location = new System.Drawing.Point(3, 93);
+            this.LblChooseLanguage.Name = "LblChooseLanguage";
+            this.LblChooseLanguage.Size = new System.Drawing.Size(228, 13);
+            this.LblChooseLanguage.TabIndex = 6;
+            this.LblChooseLanguage.Text = "Please select a language for the install process";
+            // 
+            // LblWelcome
+            // 
+            this.LblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.LblWelcome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblWelcome.Location = new System.Drawing.Point(0, 0);
+            this.LblWelcome.Name = "LblWelcome";
+            this.LblWelcome.Size = new System.Drawing.Size(287, 93);
+            this.LblWelcome.TabIndex = 3;
+            this.LblWelcome.Text = "Welcome to the {0} Setup Wizard";
+            this.LblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // LvLanguages
             // 
             this.LvLanguages.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -123,18 +135,6 @@
             this.LvLanguages.UseCompatibleStateImageBehavior = false;
             this.LvLanguages.View = System.Windows.Forms.View.List;
             this.LvLanguages.SelectedIndexChanged += new System.EventHandler(this.LvLanguages_SelectedIndexChanged);
-            // 
-            // LblWelcome
-            // 
-            this.LblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.LblWelcome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblWelcome.Location = new System.Drawing.Point(0, 0);
-            this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(287, 93);
-            this.LblWelcome.TabIndex = 3;
-            this.LblWelcome.Text = "Welcome to the Product Setup Wizard";
-            this.LblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LanguageSelectorForm
             // 

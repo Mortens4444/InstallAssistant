@@ -15,7 +15,9 @@ namespace ProductInstaller._1
 			foreach (var language in languages)
 			{
 				LvLanguages.Items.Add(new ListViewItem(language.ToString()));
-			}			
+			}
+
+		    LblWelcome.Text = LblWelcome.Text.Replace("{0}", InstallerProperties.ProductName);
 		}
 
 		private void BtnCancel_Click(object sender, EventArgs e)
