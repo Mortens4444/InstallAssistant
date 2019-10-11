@@ -1,10 +1,10 @@
-﻿using InstallAssistant.InstallSource;
+﻿using System.IO;
+using InstallAssistant.InstallSource;
 using Newtonsoft.Json;
-using System.IO;
 
 namespace InstallAssistant.Options
 {
-    static class SettingsProvider
+	static class SettingsProvider
     {
         private static readonly string SettingsFileName = "settings.json";
 

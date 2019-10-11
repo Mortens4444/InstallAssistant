@@ -1,0 +1,22 @@
+English;Magyar;Deutch;Español;Français;日本語;한국어;中文
+Accept;Elfogadom;Akzeptieren;Aceptar;Acceptez;受け入れる;동의하기;接受
+All;Összes;Alle;Todas;Tout;すべて;모두;所有
+Are you sure you want to exit? This will interrupt the setup progress.;Biztosan ki akar lépni? Ezzel megszakítja a telepítési folyamatot.;Sie sind sicher, dass Sie beenden wollen? Dies unterbricht den Installationsvorgang.;¿Seguro que quieres salir? Esto interrumpirá el progreso de la configuración.;Êtes-vous sûr de vouloir quitter? Cela interrompra la progression de la configuration.;終了してよろしいですか？ これにより、セットアップの進行が中断されます。;종료 하시겠습니까? 설정 진행이 중단됩니다.;你确定要离开？ 这将中断设置进度。
+Back;Vissza;Zurück;Regresa;Retourner;バック;뒤;背部
+Cancel;Mégse;Stornieren;Cancelar;Annuler;キャンセル;취소;取消
+Confirmation;Megerősítés;Bestätigung;Confirmación;Confirmation;確認;확인;确认书
+Exit;Kilépés;Ausgang;Salida;Sortie;出口;출구;出口
+Finish;Befejezés;Beenden;Terminar;Terminer;終わり;끝;完
+From disk only;Csak a lemezről;Nur von der Festplatte;Solo desde disco;Du disque seulement;ディスクからのみ;디스크에서만;仅从磁盘
+From embedded resource only;Csak a beágyazott erőforrásokból;Nur aus eingebetteten Ressourcen;Solo de recurso incrustado;De la ressource incorporée seulement;埋め込みリソースのみから;임베디드 리소스에서만;仅来自嵌入式资源
+From internet only;Csak internetről;Nur aus dem Internet;Solo por internet;De internet seulement;インターネットからのみ;인터넷에서만;仅来自互联网
+Install assistant;Telepítő segéd;Installieren Assistent;Asistente de instalación;Assistant d'installation;インストールアシスタント;보조자 설치;安装助手
+Installer mode;Telepítési mód;Installations modus;Modo instalador;Mode installateur;インストーラーモード;인스톨러 모드;安装程序模式
+Next;Következő;Nächster;Próximo;Prochain;次;다음;下一个
+No;Nem;Nein;No;Non;番号;아니;没有
+Please accept the license agreement to continue the installation.;Kérjük, fogadja el a licencszerződést a telepítés folytatásához.;Bitte akzeptieren Sie die Lizenzvereinbarung, um die Installation fortzusetzen.;Acepte el acuerdo de licencia para continuar con la instalación.;Veuillez accepter les termes du contrat de licence pour poursuivre l’installation.;ライセンス契約に同意して、インストールを続行してください。;설치를 계속하려면 라이센스 계약에 동의하십시오.;请接受许可协议以继续安装。
+Please select a language for the install process;Kérjük válasszon nyelvet a telepítés folyamatához;Bitte wählen Sie eine Sprache für den Installationsvorgang;Por favor seleccione un idioma para el proceso de instalación;Veuillez sélectionner une langue pour le processus d'installation;インストールプロセスの言語を選択してください;설치 과정의 언어를 선택하십시오;请为安装过程选择一种语言
+Start;Indít;Anfang;Comienzo;Début;開始;스타트;开始
+Thank you for choosing this product.;Köszönjük, hogy ezt a terméket választotta.;Vielen Dank, dass Sie sich für dieses Produkt entschieden haben.;Gracias por elegir este producto.;Merci d'avoir choisi ce produit.;この製品をお選びいただきありがとうございます。;이 제품을 선택해 주셔서 감사합니다.;感谢您选择此产品。
+Yes;Igen;Ja;Si;Oui;はい;예;是
+Welcome to the {0} Setup Wizard;Üdvözli a {0} Telepítő Segéd;Willkommen beim {0} Setup-Assistenten;Bienvenido al {0} Asistente de configuración;Bienvenue dans l'assistant de configuration {0};{0}セットアップウィザードへようこそ;{0} 설정 마법사에 오신 것을 환영합니다;欢迎使用{0}安装向导

@@ -1,10 +1,10 @@
-﻿using InstallAssistant.InstallSource;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
+using InstallAssistant.InstallSource;
 
 namespace InstallAssistant
 {
-    public class InstallationStrategy
+	public class InstallationStrategy
     {
         public static void SelectInstallers(string installerGroup, TableLayoutControlCollection controls)
         {

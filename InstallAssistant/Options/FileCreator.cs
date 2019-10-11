@@ -2,7 +2,7 @@
 
 namespace InstallAssistant.Options
 {
-    class FileCreator
+	class FileCreator
     {
         public void CreateNewFile(string filename, string data)
         {

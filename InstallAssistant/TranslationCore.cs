@@ -1,7 +1,7 @@
-﻿using Mtf.Languages.Utils;
-using System.Globalization;
+﻿using System.Globalization;
+using InstallAssistant.Utils;
 
-namespace Mtf.Languages
+namespace InstallAssistant
 {
 	public static class TranslationCore
 	{

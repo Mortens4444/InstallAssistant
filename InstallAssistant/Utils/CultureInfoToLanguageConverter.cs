@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 
-namespace Mtf.Languages.Utils
+namespace InstallAssistant.Utils
 {
     class CultureInfoToLanguageConverter
     {

@@ -1,12 +1,12 @@
-﻿using InstallAssistant.InstallSource;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+using InstallAssistant.InstallSource;
+using MessageBoxes;
 
 namespace InstallAssistant
 {
-    public class InstallSequence : List<Installer>
+	public class InstallSequence : List<Installer>
     {
         public void ExecuteEnabledInstallers()
         {
@@ -18,7 +18,7 @@ namespace InstallAssistant
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+					ErrorBox.Show(ex);
 				}
             }
         }

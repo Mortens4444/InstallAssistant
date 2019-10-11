@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace Mtf.Languages.Utils
+namespace InstallAssistant.Utils
 {
     class EmbeddedResourceReader
     {

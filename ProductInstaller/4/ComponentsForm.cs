@@ -1,7 +1,6 @@
 ﻿using System.Windows.Forms;
 using InstallAssistant;
-using Mtf.Languages;
-using Mtf.Languages.Utils;
+using InstallAssistant.Utils;
 
 namespace ProductInstaller._4
 {

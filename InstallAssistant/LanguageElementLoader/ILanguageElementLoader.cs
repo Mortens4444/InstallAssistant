@@ -1,7 +1,7 @@
-﻿using Mtf.Languages.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using InstallAssistant.Utils;
 
-namespace Mtf.Languages.LanguageElemtLoader
+namespace InstallAssistant.LanguageElementLoader
 {
 	interface ILanguageElementLoader
 	{

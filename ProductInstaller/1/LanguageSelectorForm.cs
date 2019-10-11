@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Mtf.Languages;
-using Mtf.Languages.Utils;
+using InstallAssistant;
+using InstallAssistant.Utils;
 
 namespace ProductInstaller._1
 {
@@ -27,7 +27,18 @@ namespace ProductInstaller._1
 
 		private void LvLanguages_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (LvLanguages.SelectedItems.Count > 0)
+			SelectLanguage();
+		}
+
+		private void LvLanguages_DoubleClick(object sender, EventArgs e)
+		{
+			SelectLanguage();
+			BtnNext.PerformClick();
+		}
+
+		private void SelectLanguage()
+		{
+			if (LvLanguages.SelectedItems.Count == 1)
 			{
 				var language = (Language)Enum.Parse(typeof(Language), LvLanguages.SelectedItems[0].Text, true);
 				TranslationCore.Language = language;
