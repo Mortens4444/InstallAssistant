@@ -1,12 +1,12 @@
-﻿using InstallAssistant.InstallSource;
-using InstallAssistant.Options;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using InstallAssistant.InstallSource;
+using InstallAssistant.Options;
 
 namespace InstallAssistant
 {
-    public static class InstallSequenceBuilder
+	public static class InstallSequenceBuilder
     {
         private static readonly string InstallerPath = Path.Combine(Application.StartupPath, "Installers");
 

@@ -122,10 +122,6 @@
       <Project>{35205bfc-b019-4f2b-a2de-5d1f901b81cc}</Project>
       <Name>InstallAssistant</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mtf.Languages\Mtf.Languages.csproj">
-      <Project>{6e21f7e4-f3aa-433b-9e27-666286234025}</Project>
-      <Name>Mtf.Languages</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\LicenseAgreement.rtf" />

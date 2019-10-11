@@ -1,10 +1,10 @@
-﻿using InstallAssistant.InstallSource;
+﻿using System.Collections.Generic;
+using InstallAssistant.InstallSource;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace InstallAssistant.Options
 {
-    class Settings
+	class Settings
     {
         public List<(InstallerType Type,
                      string Name,

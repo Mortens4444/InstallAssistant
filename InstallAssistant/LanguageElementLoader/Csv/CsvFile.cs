@@ -1,8 +1,8 @@
-﻿using Mtf.Languages.Utils;
-using System;
+﻿using System;
 using System.Reflection;
+using InstallAssistant.Utils;
 
-namespace Mtf.Languages.LanguageElemtLoader.Csv
+namespace InstallAssistant.LanguageElementLoader.Csv
 {
 	public static class CsvFile
 	{
@@ -11,7 +11,7 @@ namespace Mtf.Languages.LanguageElemtLoader.Csv
 		public static string GetContent()
 		{
 			var embeddedResourceReader = new EmbeddedResourceReader();
-			return embeddedResourceReader.GetContent(Assembly.GetExecutingAssembly(), $"Mtf.Languages.Languages.{FileName}");
+			return embeddedResourceReader.GetContent(Assembly.GetExecutingAssembly(), $"InstallAssistant.Languages.{FileName}");
 		}
 
 		public static string[] SplitContent(string languageFileContent)

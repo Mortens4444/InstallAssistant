@@ -3,7 +3,7 @@ using System.IO;
 
 namespace InstallAssistant.Options
 {
-    public class Reader
+	public class Reader
     {
         public string[] LoadFile(string filename)
         {

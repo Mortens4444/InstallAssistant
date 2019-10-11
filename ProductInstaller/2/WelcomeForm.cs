@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Mtf.Languages;
+using InstallAssistant;
 
 namespace ProductInstaller._2
 {

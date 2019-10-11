@@ -1,8 +1,8 @@
-﻿using Mtf.Languages.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using InstallAssistant.Utils;
 
-namespace Mtf.Languages.LanguageElemtLoader.Csv
+namespace InstallAssistant.LanguageElementLoader.Csv
 {
 	class CsvLanguageElementLoader : ILanguageElementLoader
 	{

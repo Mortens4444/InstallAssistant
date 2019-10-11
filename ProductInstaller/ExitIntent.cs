@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Enums;
 using MessageBoxes;
-using Mtf.Languages;
+using InstallAssistant;
 
 namespace ProductInstaller
 {

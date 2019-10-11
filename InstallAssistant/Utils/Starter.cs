@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace InstallAssistant.ProcessUtils
+namespace InstallAssistant.Utils
 {
     class Starter
     {

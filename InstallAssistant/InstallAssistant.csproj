@@ -36,8 +36,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Enums, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageBoxes, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\MessageBoxes.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SourceInfo, Version=1.0.7222.35963, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\SourceInfo.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,11 +63,20 @@
     <Compile Include="InstallSource\InstallFromDisk.cs" />
     <Compile Include="InstallSource\InstallFromEmbeddedResource.cs" />
     <Compile Include="InstallSource\InstallFromInternet.cs" />
+    <Compile Include="LanguageElementLoader\Csv\CsvFile.cs" />
+    <Compile Include="LanguageElementLoader\Csv\CsvLanguageElementLoader.cs" />
+    <Compile Include="LanguageElementLoader\ILanguageElementLoader.cs" />
+    <Compile Include="Lng.cs" />
     <Compile Include="Options\FileCreator.cs" />
     <Compile Include="Options\Reader.cs" />
     <Compile Include="Options\Settings.cs" />
     <Compile Include="Options\SettingsProvider.cs" />
-    <Compile Include="ProcessUtils\Starter.cs" />
+    <Compile Include="TranslationCore.cs" />
+    <Compile Include="Utils\CultureInfoToLanguageConverter.cs" />
+    <Compile Include="Utils\EmbeddedResourceReader.cs" />
+    <Compile Include="Utils\Language.cs" />
+    <Compile Include="Utils\ResourceProvider.cs" />
+    <Compile Include="Utils\Starter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +87,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Languages\AllLanguages.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,11 +100,5 @@
     </Compile>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Mtf.Languages\Mtf.Languages.csproj">
-      <Project>{6E21F7E4-F3AA-433B-9E27-666286234025}</Project>
-      <Name>Mtf.Languages</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

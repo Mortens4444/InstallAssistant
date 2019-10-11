@@ -1,4 +1,4 @@
-﻿namespace Mtf.Languages.Utils
+﻿namespace InstallAssistant.Utils
 {
     public enum Language
     {

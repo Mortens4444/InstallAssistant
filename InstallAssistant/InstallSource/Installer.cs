@@ -1,10 +1,10 @@
-﻿using InstallAssistant.ProcessUtils;
-using System;
+﻿using System;
 using System.IO;
+using InstallAssistant.Utils;
 
 namespace InstallAssistant.InstallSource
 {
-    public abstract class Installer
+	public abstract class Installer
     {
         public Installer(string installerName, string semicolonSeparatedGroups)
         {

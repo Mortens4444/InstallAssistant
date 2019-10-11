@@ -1,21 +1,20 @@
-﻿using Mtf.Languages.LanguageElemtLoader;
-using Mtf.Languages.LanguageElemtLoader.Csv;
-using Mtf.Languages.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using InstallAssistant.LanguageElementLoader;
+using InstallAssistant.LanguageElementLoader.Csv;
+using InstallAssistant.Utils;
 using static System.Windows.Forms.ComboBox;
 using static System.Windows.Forms.Control;
 using static System.Windows.Forms.Menu;
 
-namespace Mtf.Languages
+namespace InstallAssistant
 {
 	public static class Lng
 	{
 		public static readonly Dictionary<(Language Language, string ElementIdentifier), List<string>> AllLanguageElements;
 
-		//private static ILanguageElementLoader languageElementLoader = new JsonLanguageElementLoader();
 		private static readonly ILanguageElementLoader languageElementLoader = new CsvLanguageElementLoader();
 
 		static Lng()

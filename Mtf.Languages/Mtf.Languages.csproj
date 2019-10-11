@@ -36,19 +36,10 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LanguageElemtLoader\Csv\CsvFile.cs" />
-    <Compile Include="Utils\CultureInfoToLanguageConverter.cs" />
-    <Compile Include="Utils\EmbeddedResourceReader.cs" />
-    <Compile Include="LanguageElemtLoader\ILanguageElementLoader.cs" />
-    <Compile Include="LanguageElemtLoader\Csv\CsvLanguageElementLoader.cs" />
-    <Compile Include="Utils\Language.cs" />
-    <Compile Include="TranslationCore.cs" />
-    <Compile Include="Lng.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Languages\AllLanguages.csv" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
