@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
+using InstallAssistant.Utils;
 using ProductInstaller._1;
 using ProductInstaller._2;
 using ProductInstaller._3;
@@ -13,8 +15,9 @@ namespace ProductInstaller
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main()
+		static void Main(string[] args)
 		{
+			new ExceptionCatcher(Assembly.GetExecutingAssembly().GetName().Name, true, true, true);
 #if !DEBUG
 			UAC.Elevate();
 #endif
@@ -43,7 +46,9 @@ namespace ProductInstaller
 
 		            if (dialogResult == DialogResult.OK)
 		            {
-		                var componentsForm = new ComponentsForm();
+						var settingsFile = args == null || args.Length == 0 ? "settings.json" : args[0];
+
+						var componentsForm = new ComponentsForm(settingsFile);
 		                if (componentsForm.ShowDialog() == DialogResult.OK)
 		                {
 		                    ComponentsForm.InstallSequence.ExecuteEnabledInstallers();

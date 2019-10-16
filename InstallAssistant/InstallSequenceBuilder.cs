@@ -10,9 +10,9 @@ namespace InstallAssistant
     {
         private static readonly string InstallerPath = Path.Combine(Application.StartupPath, "Installers");
 
-        public static (InstallSequence Installers, HashSet<string> InstallerGroups) Get()
-        {
-            var settings = SettingsProvider.Get();
+        public static (InstallSequence Installers, HashSet<string> InstallerGroups) Get(string settingsFileName)
+		{
+            var settings = SettingsProvider.Get(settingsFileName);
             var installerGroups = new HashSet<string>();
             var result = new InstallSequence();
 

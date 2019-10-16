@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Enums;
-using MessageBoxes;
 using InstallAssistant;
+using MessageBoxes;
 
 namespace ProductInstaller
 {
@@ -12,10 +12,14 @@ namespace ProductInstaller
 		{
 			BaseBox.Yes = Lng.Elem("Yes");
 			BaseBox.No = Lng.Elem("No");
-			if (ConfirmBox.Show(Lng.Elem("Confirmation"), Lng.Elem("Are you sure you want to exit? This will interrupt the setup progress."), Decide.No) == DialogResult.Yes)
+			try
 			{
-				Environment.Exit(1);
+				if (ConfirmBox.Show(Lng.Elem("Confirmation"), Lng.Elem("Are you sure you want to exit? This will interrupt the setup progress."), Decide.No) == DialogResult.Yes)
+				{
+					Environment.Exit(1);
+				}
 			}
+			catch { }
 		}
 	}
 }

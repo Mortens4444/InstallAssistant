@@ -10,10 +10,10 @@ namespace ProductInstaller._4
         
         private readonly UserInterfaceBuilder userInterfaceBuilder = new UserInterfaceBuilder();
 
-        public ComponentsForm()
+        public ComponentsForm(string settingFile)
         {
             InitializeComponent();
-            var installSequence = InstallSequenceBuilder.Get();
+            var installSequence = InstallSequenceBuilder.Get(settingFile);
             InstallSequence = installSequence.Installers;
             foreach (var group in installSequence.InstallerGroups)
             {
