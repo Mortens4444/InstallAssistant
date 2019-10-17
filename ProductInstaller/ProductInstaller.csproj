@@ -33,15 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Enums, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\Enums.dll</HintPath>
-    </Reference>
-    <Reference Include="MessageBoxes, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\MessageBoxes.dll</HintPath>
-    </Reference>
-    <Reference Include="SourceInfo, Version=1.0.7222.35963, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WinForms.MessageBoxes.1.0.0\lib\SourceInfo.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,7 +94,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
