@@ -16,27 +16,33 @@ namespace InstallAssistant
             var installerGroups = new HashSet<string>();
             var result = new InstallSequence();
 
-            foreach (var (Type, Name, Source, Enabled, SemicolonSeparatedGroups) in settings.Installers)
+            foreach (var (InstallationSource, InstallerType, Name, Source, Enabled, SemicolonSeparatedGroups) in settings.Installers)
             {
+				if (InstallerType != InstallerType.Normal)
+				{
+					continue;
+				}
+
                 var groups = SemicolonSeparatedGroups.Split(';');
                 foreach (var group in groups)
                 {
                     installerGroups.Add(group);
                 }
 
-                switch (Type)
+                switch (InstallationSource)
                 {
-                    case InstallerType.FromDisk:
+                    case InstallationSource.FromDisk:
                         result.Add(new InstallFromDisk(Name, SemicolonSeparatedGroups, Source));
                         break;
-                    case InstallerType.FromEmbeddedResource:
+                    case InstallationSource.FromEmbeddedResource:
                         result.Add(new InstallFromEmbeddedResource(Name, SemicolonSeparatedGroups, Source));
                         break;
-                    case InstallerType.FromInternet:
+                    case InstallationSource.FromInternet:
                         result.Add(new InstallFromInternet(Name, SemicolonSeparatedGroups, Source));
                         break;
                 }
-                result[result.Count - 1].Enabled = Enabled;
+				result[result.Count - 1].InstallerType = InstallerType;
+				result[result.Count - 1].Enabled = Enabled;
             }
             return (result, installerGroups);
         }

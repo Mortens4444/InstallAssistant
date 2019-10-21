@@ -48,6 +48,12 @@
     <Compile Include="1\LanguageSelectorForm.Designer.cs">
       <DependentUpon>LanguageSelectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="2\PrerequisitesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2\PrerequisitesForm.Designer.cs">
+      <DependentUpon>PrerequisitesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="2\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +66,31 @@
     <Compile Include="3\LicenseAgreementForm.Designer.cs">
       <DependentUpon>LicenseAgreementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="4\ComponentsForm.cs">
+    <Compile Include="4\SelectComponentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="4\ComponentsForm.Designer.cs">
-      <DependentUpon>ComponentsForm.cs</DependentUpon>
+    <Compile Include="4\SelectComponentsForm.Designer.cs">
+      <DependentUpon>SelectComponentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="5\StartInstallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5\StartInstallForm.Designer.cs">
+      <DependentUpon>StartInstallForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6\InstallationProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6\InstallationProgressForm.Designer.cs">
+      <DependentUpon>InstallationProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7\InstallationFinishedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7\InstallationFinishedForm.Designer.cs">
+      <DependentUpon>InstallationFinishedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="ExitIntent.cs" />
     <Compile Include="InstallerProperties.cs" />
     <Compile Include="Program.cs" />
@@ -75,14 +100,26 @@
     <EmbeddedResource Include="1\LanguageSelectorForm.resx">
       <DependentUpon>LanguageSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2\PrerequisitesForm.resx">
+      <DependentUpon>PrerequisitesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3\LicenseAgreementForm.resx">
       <DependentUpon>LicenseAgreementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="4\ComponentsForm.resx">
-      <DependentUpon>ComponentsForm.cs</DependentUpon>
+    <EmbeddedResource Include="4\SelectComponentsForm.resx">
+      <DependentUpon>SelectComponentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5\StartInstallForm.resx">
+      <DependentUpon>StartInstallForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6\InstallationProgressForm.resx">
+      <DependentUpon>InstallationProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7\InstallationFinishedForm.resx">
+      <DependentUpon>InstallationFinishedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,5 +157,6 @@
   <ItemGroup>
     <None Include="Resources\Welcome.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

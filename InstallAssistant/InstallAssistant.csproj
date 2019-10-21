@@ -57,6 +57,7 @@
     <Compile Include="InstallSequenceBuilder.cs" />
     <Compile Include="InstallSequence.cs" />
     <Compile Include="InstallSource\Installer.cs" />
+    <Compile Include="InstallSource\InstallationSource.cs" />
     <Compile Include="InstallSource\InstallerType.cs" />
     <Compile Include="InstallSource\InstallFromDisk.cs" />
     <Compile Include="InstallSource\InstallFromEmbeddedResource.cs" />

@@ -17,7 +17,8 @@ namespace ProductInstaller._1
 				LvLanguages.Items.Add(new ListViewItem(language.ToString()));
 			}
 
-		    LblWelcome.Text = LblWelcome.Text.Replace("{0}", InstallerProperties.ProductName);
+		    Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
+			LblWelcome.Text = LblWelcome.Text.Replace(Constants.ProductName, InstallerProperties.ProductName);
 		}
 
 		private void BtnCancel_Click(object sender, EventArgs e)
@@ -42,6 +43,15 @@ namespace ProductInstaller._1
 			{
 				var language = (Language)Enum.Parse(typeof(Language), LvLanguages.SelectedItems[0].Text, true);
 				TranslationCore.Language = language;
+			}
+		}
+
+		private void LanguageSelectorForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (DialogResult != DialogResult.OK)
+			{
+				e.Cancel = true;
+				ExitIntent.Check();
 			}
 		}
 	}

@@ -11,6 +11,8 @@ namespace InstallAssistant.InstallSource
             Name = installerName;
             Groups = semicolonSeparatedGroups.Split(';');
         }
+		
+		public InstallerType InstallerType { get; set; } = InstallerType.Normal;
 
         public bool Enabled { get; set; } = true;
 

@@ -1,30 +1,32 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using InstallAssistant;
 using InstallAssistant.Utils;
 
 namespace ProductInstaller._4
 {
-	public partial class ComponentsForm : Form
+	public partial class SelectComponentsForm : Form
     {
         public static InstallSequence InstallSequence;
         
         private readonly UserInterfaceBuilder userInterfaceBuilder = new UserInterfaceBuilder();
 
-        public ComponentsForm(string settingFile)
+        public SelectComponentsForm(InstallSequence installSequence, HashSet<string> installerGroups)
         {
             InitializeComponent();
-            var installSequence = InstallSequenceBuilder.Get(settingFile);
-            InstallSequence = installSequence.Installers;
-            foreach (var group in installSequence.InstallerGroups)
+
+			InstallSequence = installSequence;
+            foreach (var group in installerGroups)
             {
                 ComboBox.Items.Add(group);
             }
 
 			Lng.Translate(this);
+			Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
 			ComboBox.SelectedIndex = 0;
 		}
 
-        private void MainForm_Load(object sender, System.EventArgs e)
+        private void SelectComponentsForm_Load(object sender, System.EventArgs e)
         {
             userInterfaceBuilder.CreateUserInterface(LayoutPanel, InstallSequence);
         }
@@ -38,5 +40,14 @@ namespace ProductInstaller._4
         {
             InstallationStrategy.SelectInstallers(Lng.Elem(Language.English, ComboBox.SelectedItem.ToString()), LayoutPanel.Controls);
         }
-    }
+
+		private void SelectComponentsForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (DialogResult != DialogResult.OK && DialogResult != DialogResult.No && DialogResult != DialogResult.None)
+			{
+				e.Cancel = true;
+				ExitIntent.Check();
+			}
+		}
+	}
 }

@@ -1,9 +1,9 @@
 ﻿namespace InstallAssistant.InstallSource
 {
-    enum InstallerType
-    {
-        FromDisk,
-        FromEmbeddedResource,
-        FromInternet
-    }
+	public enum InstallerType
+	{
+		Normal,
+		Prerequisite,
+		AfterInstallation
+	}
 }

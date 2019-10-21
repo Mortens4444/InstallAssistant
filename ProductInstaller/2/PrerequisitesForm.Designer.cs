@@ -1,6 +1,6 @@
-﻿namespace ProductInstaller._1
+﻿namespace ProductInstaller._2
 {
-	partial class LanguageSelectorForm
+	partial class PrerequisitesForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,40 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.BtnCancel = new System.Windows.Forms.Button();
-			this.BtnNext = new System.Windows.Forms.Button();
 			this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+			this.PbVerticalLogo = new System.Windows.Forms.PictureBox();
 			this.Panel = new System.Windows.Forms.Panel();
 			this.LblChooseLanguage = new System.Windows.Forms.Label();
 			this.LblWelcome = new System.Windows.Forms.Label();
-			this.LvLanguages = new System.Windows.Forms.ListView();
-			this.PbVerticalLogo = new System.Windows.Forms.PictureBox();
+			this.LvPrerequisites = new System.Windows.Forms.ListView();
+			this.BtnCancel = new System.Windows.Forms.Button();
+			this.BtnNext = new System.Windows.Forms.Button();
+			this.BtnBack = new System.Windows.Forms.Button();
 			this.LayoutPanel.SuspendLayout();
-			this.Panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PbVerticalLogo)).BeginInit();
+			this.Panel.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// BtnCancel
-			// 
-			this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.BtnCancel.Location = new System.Drawing.Point(385, 328);
-			this.BtnCancel.Name = "BtnCancel";
-			this.BtnCancel.Size = new System.Drawing.Size(78, 27);
-			this.BtnCancel.TabIndex = 5;
-			this.BtnCancel.Text = "Cancel";
-			this.BtnCancel.UseVisualStyleBackColor = true;
-			this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-			// 
-			// BtnNext
-			// 
-			this.BtnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.BtnNext.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.BtnNext.Location = new System.Drawing.Point(301, 328);
-			this.BtnNext.Name = "BtnNext";
-			this.BtnNext.Size = new System.Drawing.Size(78, 27);
-			this.BtnNext.TabIndex = 3;
-			this.BtnNext.Text = "Next";
-			this.BtnNext.UseVisualStyleBackColor = true;
 			// 
 			// LayoutPanel
 			// 
@@ -79,13 +58,23 @@
 			this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 320F));
 			this.LayoutPanel.Size = new System.Drawing.Size(457, 320);
-			this.LayoutPanel.TabIndex = 4;
+			this.LayoutPanel.TabIndex = 5;
+			// 
+			// PbVerticalLogo
+			// 
+			this.PbVerticalLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PbVerticalLogo.Image = global::ProductInstaller.Properties.Resources.VerticalLogo;
+			this.PbVerticalLogo.Location = new System.Drawing.Point(3, 3);
+			this.PbVerticalLogo.Name = "PbVerticalLogo";
+			this.PbVerticalLogo.Size = new System.Drawing.Size(158, 314);
+			this.PbVerticalLogo.TabIndex = 1;
+			this.PbVerticalLogo.TabStop = false;
 			// 
 			// Panel
 			// 
 			this.Panel.Controls.Add(this.LblChooseLanguage);
 			this.Panel.Controls.Add(this.LblWelcome);
-			this.Panel.Controls.Add(this.LvLanguages);
+			this.Panel.Controls.Add(this.LvPrerequisites);
 			this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel.Location = new System.Drawing.Point(167, 3);
 			this.Panel.Name = "Panel";
@@ -96,10 +85,12 @@
 			// 
 			this.LblChooseLanguage.AutoSize = true;
 			this.LblChooseLanguage.Location = new System.Drawing.Point(3, 93);
+			this.LblChooseLanguage.MaximumSize = new System.Drawing.Size(280, 0);
 			this.LblChooseLanguage.Name = "LblChooseLanguage";
-			this.LblChooseLanguage.Size = new System.Drawing.Size(228, 13);
+			this.LblChooseLanguage.Size = new System.Drawing.Size(264, 39);
 			this.LblChooseLanguage.TabIndex = 6;
-			this.LblChooseLanguage.Text = "Please select a language for the install process";
+			this.LblChooseLanguage.Text = "The Setup Wizard will install {ProductName} and the following prerequisites on yo" +
+    "ur computer. Click Next to continue or Cancel to exit the Setup Wizard.";
 			// 
 			// LblWelcome
 			// 
@@ -113,63 +104,86 @@
 			this.LblWelcome.Text = "Welcome to the {ProductName} Setup Wizard";
 			this.LblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// LvLanguages
+			// LvPrerequisites
 			// 
-			this.LvLanguages.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.LvLanguages.FullRowSelect = true;
-			this.LvLanguages.HideSelection = false;
-			this.LvLanguages.Location = new System.Drawing.Point(0, 162);
-			this.LvLanguages.MultiSelect = false;
-			this.LvLanguages.Name = "LvLanguages";
-			this.LvLanguages.Size = new System.Drawing.Size(287, 152);
-			this.LvLanguages.TabIndex = 1;
-			this.LvLanguages.UseCompatibleStateImageBehavior = false;
-			this.LvLanguages.View = System.Windows.Forms.View.List;
-			this.LvLanguages.SelectedIndexChanged += new System.EventHandler(this.LvLanguages_SelectedIndexChanged);
-			this.LvLanguages.DoubleClick += new System.EventHandler(this.LvLanguages_DoubleClick);
+			this.LvPrerequisites.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.LvPrerequisites.FullRowSelect = true;
+			this.LvPrerequisites.HideSelection = false;
+			this.LvPrerequisites.Location = new System.Drawing.Point(0, 162);
+			this.LvPrerequisites.MultiSelect = false;
+			this.LvPrerequisites.Name = "LvPrerequisites";
+			this.LvPrerequisites.Size = new System.Drawing.Size(287, 152);
+			this.LvPrerequisites.TabIndex = 1;
+			this.LvPrerequisites.UseCompatibleStateImageBehavior = false;
+			this.LvPrerequisites.View = System.Windows.Forms.View.List;
 			// 
-			// PbVerticalLogo
+			// BtnCancel
 			// 
-			this.PbVerticalLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.PbVerticalLogo.Image = global::ProductInstaller.Properties.Resources.VerticalLogo;
-			this.PbVerticalLogo.Location = new System.Drawing.Point(3, 3);
-			this.PbVerticalLogo.Name = "PbVerticalLogo";
-			this.PbVerticalLogo.Size = new System.Drawing.Size(158, 314);
-			this.PbVerticalLogo.TabIndex = 1;
-			this.PbVerticalLogo.TabStop = false;
+			this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnCancel.Location = new System.Drawing.Point(385, 328);
+			this.BtnCancel.Name = "BtnCancel";
+			this.BtnCancel.Size = new System.Drawing.Size(78, 27);
+			this.BtnCancel.TabIndex = 7;
+			this.BtnCancel.Text = "Cancel";
+			this.BtnCancel.UseVisualStyleBackColor = true;
+			this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
 			// 
-			// LanguageSelectorForm
+			// BtnNext
+			// 
+			this.BtnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnNext.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.BtnNext.Location = new System.Drawing.Point(301, 328);
+			this.BtnNext.Name = "BtnNext";
+			this.BtnNext.Size = new System.Drawing.Size(78, 27);
+			this.BtnNext.TabIndex = 6;
+			this.BtnNext.Text = "Next";
+			this.BtnNext.UseVisualStyleBackColor = true;
+			// 
+			// BtnBack
+			// 
+			this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnBack.DialogResult = System.Windows.Forms.DialogResult.No;
+			this.BtnBack.Location = new System.Drawing.Point(217, 328);
+			this.BtnBack.Name = "BtnBack";
+			this.BtnBack.Size = new System.Drawing.Size(78, 27);
+			this.BtnBack.TabIndex = 8;
+			this.BtnBack.Text = "Back";
+			this.BtnBack.UseVisualStyleBackColor = true;
+			// 
+			// PrerequisitesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(469, 361);
+			this.Controls.Add(this.BtnBack);
 			this.Controls.Add(this.BtnCancel);
 			this.Controls.Add(this.BtnNext);
 			this.Controls.Add(this.LayoutPanel);
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(485, 400);
 			this.MinimumSize = new System.Drawing.Size(485, 400);
-			this.Name = "LanguageSelectorForm";
+			this.Name = "PrerequisitesForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "{InstallerTitle} Setup";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LanguageSelectorForm_FormClosing);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrerequisitesForm_FormClosing);
 			this.LayoutPanel.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.PbVerticalLogo)).EndInit();
 			this.Panel.ResumeLayout(false);
 			this.Panel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PbVerticalLogo)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
+		private System.Windows.Forms.TableLayoutPanel LayoutPanel;
+		private System.Windows.Forms.PictureBox PbVerticalLogo;
+		private System.Windows.Forms.Panel Panel;
+		private System.Windows.Forms.Label LblChooseLanguage;
+		private System.Windows.Forms.Label LblWelcome;
+		private System.Windows.Forms.ListView LvPrerequisites;
 		private System.Windows.Forms.Button BtnCancel;
 		private System.Windows.Forms.Button BtnNext;
-		private System.Windows.Forms.TableLayoutPanel LayoutPanel;
-		private System.Windows.Forms.Label LblChooseLanguage;
-        private System.Windows.Forms.PictureBox PbVerticalLogo;
-        private System.Windows.Forms.Panel Panel;
-        private System.Windows.Forms.ListView LvLanguages;
-        private System.Windows.Forms.Label LblWelcome;
-    }
+		private System.Windows.Forms.Button BtnBack;
+	}
 }

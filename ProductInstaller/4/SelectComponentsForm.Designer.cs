@@ -1,6 +1,6 @@
 ﻿namespace ProductInstaller._4
 {
-    partial class ComponentsForm
+    partial class SelectComponentsForm
 	{
         /// <summary>
         /// Required designer variable.
@@ -121,8 +121,9 @@
 			this.MinimumSize = new System.Drawing.Size(485, 400);
 			this.Name = "ComponentsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Setup Wizard";
-			this.Load += new System.EventHandler(this.MainForm_Load);
+			this.Text = "{InstallerTitle} Setup";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectComponentsForm_FormClosing);
+			this.Load += new System.EventHandler(this.SelectComponentsForm_Load);
 			this.GroupBox.ResumeLayout(false);
 			this.GroupBox.PerformLayout();
 			this.ResumeLayout(false);
