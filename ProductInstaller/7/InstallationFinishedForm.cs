@@ -16,5 +16,10 @@ namespace ProductInstaller._7
 		{
 			InitializeComponent();
 		}
+
+		private void BtnExit_Click(object sender, EventArgs e)
+		{
+			ExitIntent.Check();
+		}
 	}
 }

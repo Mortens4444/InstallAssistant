@@ -34,11 +34,13 @@
 			this.BtnExit = new System.Windows.Forms.Button();
 			this.BtnFinish = new System.Windows.Forms.Button();
 			this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+			this.BtnBack = new System.Windows.Forms.Button();
 			this.GroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// GroupBox
 			// 
+			this.GroupBox.Controls.Add(this.BtnBack);
 			this.GroupBox.Controls.Add(this.Label);
 			this.GroupBox.Controls.Add(this.ComboBox);
 			this.GroupBox.Controls.Add(this.BtnExit);
@@ -109,17 +111,29 @@
 			this.LayoutPanel.Size = new System.Drawing.Size(457, 281);
 			this.LayoutPanel.TabIndex = 1;
 			// 
-			// ComponentsForm
+			// BtnBack
+			// 
+			this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnBack.DialogResult = System.Windows.Forms.DialogResult.No;
+			this.BtnBack.Location = new System.Drawing.Point(217, 328);
+			this.BtnBack.Name = "BtnBack";
+			this.BtnBack.Size = new System.Drawing.Size(78, 27);
+			this.BtnBack.TabIndex = 10;
+			this.BtnBack.Text = "Back";
+			this.BtnBack.UseVisualStyleBackColor = true;
+			// 
+			// SelectComponentsForm
 			// 
 			this.AcceptButton = this.BtnFinish;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.BtnExit;
 			this.ClientSize = new System.Drawing.Size(469, 361);
 			this.Controls.Add(this.GroupBox);
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(485, 400);
 			this.MinimumSize = new System.Drawing.Size(485, 400);
-			this.Name = "ComponentsForm";
+			this.Name = "SelectComponentsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "{InstallerTitle} Setup";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectComponentsForm_FormClosing);
@@ -137,6 +151,7 @@
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.ComboBox ComboBox;
-    }
+		private System.Windows.Forms.Button BtnBack;
+	}
 }
 

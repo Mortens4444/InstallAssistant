@@ -140,8 +140,10 @@
 			// 
 			// LanguageSelectorForm
 			// 
+			this.AcceptButton = this.BtnNext;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.BtnCancel;
 			this.ClientSize = new System.Drawing.Size(469, 361);
 			this.Controls.Add(this.BtnCancel);
 			this.Controls.Add(this.BtnNext);

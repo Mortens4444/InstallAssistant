@@ -16,5 +16,10 @@ namespace ProductInstaller._5
 		{
 			InitializeComponent();
 		}
+
+		private void BtnCancel_Click(object sender, EventArgs e)
+		{
+			ExitIntent.Check();
+		}
 	}
 }
