@@ -8,6 +8,9 @@ using ProductInstaller._1;
 using ProductInstaller._2;
 using ProductInstaller._3;
 using ProductInstaller._4;
+using ProductInstaller._5;
+using ProductInstaller._6;
+using ProductInstaller._7;
 
 namespace ProductInstaller
 {
@@ -67,6 +70,7 @@ namespace ProductInstaller
 
 					if (dialogResult == DialogResult.OK)
 					{
+						LicenseAgreement:
 						var licenseAgreementForm = new LicenseAgreementForm();
 						if ((dialogResult = licenseAgreementForm.ShowDialog()) == DialogResult.No)
 						{
@@ -75,10 +79,31 @@ namespace ProductInstaller
 
 						if (dialogResult == DialogResult.OK)
 						{
-							var componentsForm = new SelectComponentsForm(installSequence.Installers, installSequence.InstallerGroups);
-							if (componentsForm.ShowDialog() == DialogResult.OK)
+							SelectComponents:
+							var selectComponentsForm = new SelectComponentsForm(installSequence.Installers, installSequence.InstallerGroups);
+							if ((dialogResult = selectComponentsForm.ShowDialog()) == DialogResult.No)
 							{
-								SelectComponentsForm.InstallSequence.ExecuteEnabledInstallers();
+								goto LicenseAgreement;
+							}
+
+							if (dialogResult == DialogResult.OK)
+							{
+								var startInstallForm = new StartInstallForm();
+								if ((dialogResult = startInstallForm.ShowDialog()) == DialogResult.No)
+								{
+									goto SelectComponents;
+								}
+
+								if (dialogResult == DialogResult.OK)
+								{
+									//var installationProgressForm = new InstallationProgressForm();
+									//installationProgressForm.ShowDialog();
+
+									//var installationFinishedForm = new InstallationFinishedForm();
+									//installationFinishedForm.ShowDialog();
+
+									SelectComponentsForm.InstallSequence.ExecuteEnabledInstallers();
+								}
 							}
 						}
 					}
