@@ -9,10 +9,12 @@ namespace ProductInstaller._2
 {
 	public partial class PrerequisitesForm : Form
 	{
+		public IEnumerable<Installer> Prerequisites { get; private set; }
+
 		public PrerequisitesForm(InstallSequence installers)
 		{
-			var prerequisites = installers.Where(installer => installer.Enabled && installer.InstallerType == InstallerType.Prerequisite);
-			if (!prerequisites.Any())
+			Prerequisites = installers.Where(installer => installer.Enabled && installer.InstallerType == InstallerType.Prerequisite);
+			if (!Prerequisites.Any())
 			{
 				DialogResult = DialogResult.OK;
 				Close();
@@ -20,7 +22,7 @@ namespace ProductInstaller._2
 
 			InitializeComponent();
 			
-			foreach (var prerequisite in prerequisites)
+			foreach (var prerequisite in Prerequisites)
 			{
 				LvPrerequisites.Items.Add(new ListViewItem(prerequisite.ToString()));
 			}

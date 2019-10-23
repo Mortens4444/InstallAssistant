@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using InstallAssistant;
 using InstallAssistant.Utils;
@@ -45,6 +46,14 @@ namespace ProductInstaller
 					if ((dialogResult = prerequisitesForm.ShowDialog()) == DialogResult.No)
 					{
 						goto LanguageSelection;
+					}
+
+					if (dialogResult == DialogResult.OK)
+					{
+						foreach (var prerequisite in prerequisitesForm.Prerequisites)
+						{
+							prerequisite.Start();
+						}
 					}
 				}
 				else
@@ -96,13 +105,16 @@ namespace ProductInstaller
 
 								if (dialogResult == DialogResult.OK)
 								{
-									//var installationProgressForm = new InstallationProgressForm();
-									//installationProgressForm.ShowDialog();
+									var installationProgressForm = new InstallationProgressForm();
+									var task = Task.Factory.StartNew(() =>
+									{
+										SelectComponentsForm.InstallSequence.ExecuteEnabledInstallers();
+										installationProgressForm.Close();
 
-									//var installationFinishedForm = new InstallationFinishedForm();
-									//installationFinishedForm.ShowDialog();
-
-									SelectComponentsForm.InstallSequence.ExecuteEnabledInstallers();
+										var installationFinishedForm = new InstallationFinishedForm();
+										installationFinishedForm.ShowDialog();
+									});
+									installationProgressForm.ShowDialog();
 								}
 							}
 						}
