@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace ProductInstaller._3
 {
-	public partial class LicenseAgreementForm : Form
+	public sealed partial class LicenseAgreementForm : Form
 	{
 		private readonly ResourceProvider resourceProvider = new ResourceProvider();
 

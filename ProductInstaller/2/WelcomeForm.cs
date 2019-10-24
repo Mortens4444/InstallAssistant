@@ -3,7 +3,7 @@ using InstallAssistant;
 
 namespace ProductInstaller._2
 {
-	public partial class WelcomeForm : Form
+	public sealed partial class WelcomeForm : Form
 	{
 		public WelcomeForm()
 		{

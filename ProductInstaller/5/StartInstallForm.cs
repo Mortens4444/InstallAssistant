@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstallAssistant;
 
 namespace ProductInstaller._5
 {
-	public partial class StartInstallForm : Form
+    public sealed partial class StartInstallForm : Form
 	{
 		public StartInstallForm()
 		{
 			InitializeComponent();
-		}
+		    Lng.Translate(this);
+            Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
+        }
 
 		private void BtnCancel_Click(object sender, EventArgs e)
 		{
