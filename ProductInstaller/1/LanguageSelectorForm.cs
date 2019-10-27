@@ -5,7 +5,7 @@ using InstallAssistant.Utils;
 
 namespace ProductInstaller._1
 {
-	public partial class LanguageSelectorForm : Form
+	public sealed partial class LanguageSelectorForm : Form
 	{
 		public LanguageSelectorForm()
 		{

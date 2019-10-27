@@ -5,7 +5,7 @@ using InstallAssistant.Utils;
 
 namespace ProductInstaller._4
 {
-	public partial class SelectComponentsForm : Form
+	public sealed partial class SelectComponentsForm : Form
     {
         public static InstallSequence InstallSequence;
         

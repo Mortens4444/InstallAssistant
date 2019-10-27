@@ -7,13 +7,13 @@ using InstallAssistant.InstallSource;
 
 namespace ProductInstaller._2
 {
-	public partial class PrerequisitesForm : Form
+	public sealed partial class PrerequisitesForm : Form
 	{
 		public IEnumerable<Installer> Prerequisites { get; private set; }
 
 		public PrerequisitesForm(InstallSequence installers)
 		{
-			Prerequisites = installers.Where(installer => installer.Enabled && installer.InstallerType == InstallerType.Prerequisite);
+			Prerequisites = installers.Where(installer => installer.Enabled && installer.InstallerType == InstallerType.Prerequisite).ToList();
 			if (!Prerequisites.Any())
 			{
 				DialogResult = DialogResult.OK;
