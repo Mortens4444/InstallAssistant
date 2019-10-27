@@ -1,6 +1,6 @@
-﻿namespace ProductInstaller
+﻿namespace InstallAssistant
 {
-    internal static class InstallerProperties
+	public static class InstallerProperties
     {
         public static string ProductName => "Awesome Product";
 

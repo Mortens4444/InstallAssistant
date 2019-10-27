@@ -44,6 +44,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +54,10 @@
     <Compile Include="Enums\SPIF.cs" />
     <Compile Include="Enums\SystemErrorCodes.cs" />
     <Compile Include="Enums\SystemParameterInfoActionType.cs" />
+    <Compile Include="ExitIntent.cs" />
     <Compile Include="InstallationStrategy.cs" />
+    <Compile Include="InstallerConstants.cs" />
+    <Compile Include="InstallerProperties.cs" />
     <Compile Include="InstallSequenceBuilder.cs" />
     <Compile Include="InstallSequence.cs" />
     <Compile Include="InstallSource\Installer.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="SourceInfo\ExceptionDetails.cs" />
     <Compile Include="SourceInfo\ExcetionExtensions.cs" />
     <Compile Include="TranslationCore.cs" />
+    <Compile Include="UAC.cs" />
     <Compile Include="Utils\CultureInfoToLanguageConverter.cs" />
     <Compile Include="Utils\EmbeddedResourceReader.cs" />
     <Compile Include="Utils\ExceptionCatcher.cs" />

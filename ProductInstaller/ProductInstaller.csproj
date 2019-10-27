@@ -90,12 +90,8 @@
     <Compile Include="7\InstallationFinishedForm.Designer.cs">
       <DependentUpon>InstallationFinishedForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Constants.cs" />
-    <Compile Include="ExitIntent.cs" />
-    <Compile Include="InstallerProperties.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UAC.cs" />
     <Compile Include="UserInterfaceBuilder.cs" />
     <EmbeddedResource Include="1\LanguageSelectorForm.resx">
       <DependentUpon>LanguageSelectorForm.cs</DependentUpon>

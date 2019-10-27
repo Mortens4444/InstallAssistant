@@ -17,7 +17,7 @@ namespace ProductInstaller._3
 		{
 			InitializeComponent();
 			Lng.Translate(this);
-			Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
+			Text = Text.Replace(InstallerConstants.InstallerTitle, InstallerProperties.InstallerTitle);
 
 			var assembly = Assembly.GetCallingAssembly();
 			var licenseFileStream = resourceProvider.GetResourceByShortName(assembly, "LicenseAgreement.rtf");

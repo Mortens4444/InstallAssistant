@@ -32,6 +32,11 @@ namespace InstallAssistant
 			Translate(form.Controls);
 		}
 
+		//public static void Translate(System.Windows.Window window)
+		//{
+
+		//}
+
 		/// <summary>
 		/// Translates a ControlCollection.
 		/// </summary>
@@ -140,17 +145,20 @@ namespace InstallAssistant
 
 		public static string Elem(Language fromLanguage, Language toLanguage, string element)
 		{
-			var fromElements = AllLanguageElements
-				.Where(e => e.Key.Language == fromLanguage)
-				.Select(e => (ElementIdentifier: e.Key.ElementIdentifier, Value: e.Value[0]))
-				.ToDictionary(t => t.Value, t => t.ElementIdentifier);
+			var toLanguageTranslation = AllLanguageElements.
+				FirstOrDefault(languageElement => languageElement.Key.Language == fromLanguage &&
+					languageElement.Value.FirstOrDefault(fromLanguageTranslation => fromLanguageTranslation == element) != null);
 
-			if (!fromElements.ContainsKey(element))
+			if (toLanguageTranslation.Value == null)
 			{
-				return element;
-				//new Exception($"Translation not found for element '{element}' from language {fromLanguage}");
+				#if DEBUG
+					throw new Exception($"Translation not found for element '{element}' from language {fromLanguage}");
+				#else
+					return element;
+				#endif
 			}
-			var elementIdentifier = fromElements[element];
+
+			var elementIdentifier = toLanguageTranslation.Key.ElementIdentifier;
 			return GetLanguageElement(elementIdentifier, 0, toLanguage) ?? element;
 		}
 

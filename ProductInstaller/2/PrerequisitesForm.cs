@@ -28,9 +28,9 @@ namespace ProductInstaller._2
 			}
 
 			Lng.Translate(this);
-			Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
-			LblWelcome.Text = LblWelcome.Text.Replace(Constants.ProductName, InstallerProperties.ProductName);
-			LblChooseLanguage.Text = LblChooseLanguage.Text.Replace(Constants.ProductName, InstallerProperties.ProductName);
+			Text = Text.Replace(InstallerConstants.InstallerTitle, InstallerProperties.InstallerTitle);
+			LblWelcome.Text = LblWelcome.Text.Replace(InstallerConstants.ProductName, InstallerProperties.ProductName);
+			LblChooseLanguage.Text = LblChooseLanguage.Text.Replace(InstallerConstants.ProductName, InstallerProperties.ProductName);
 		}
 
 		private void BtnCancel_Click(object sender, EventArgs e)

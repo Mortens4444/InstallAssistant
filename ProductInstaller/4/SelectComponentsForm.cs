@@ -22,7 +22,7 @@ namespace ProductInstaller._4
             }
 
 			Lng.Translate(this);
-			Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
+			Text = Text.Replace(InstallerConstants.InstallerTitle, InstallerProperties.InstallerTitle);
 			ComboBox.SelectedIndex = 0;
 		}
 

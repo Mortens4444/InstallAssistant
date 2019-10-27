@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using Enums;
-using InstallAssistant;
 using MessageBoxes;
 
-namespace ProductInstaller
+namespace InstallAssistant
 {
 	public static class ExitIntent
 	{

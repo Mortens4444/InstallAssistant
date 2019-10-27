@@ -9,7 +9,7 @@ namespace ProductInstaller._2
 		{
 			InitializeComponent();
 			Lng.Translate(this);
-			Text = Text.Replace(Constants.InstallerTitle, InstallerProperties.InstallerTitle);
+			Text = Text.Replace(InstallerConstants.InstallerTitle, InstallerProperties.InstallerTitle);
 		}
 
 		private void BtnCancel_Click(object sender, System.EventArgs e)

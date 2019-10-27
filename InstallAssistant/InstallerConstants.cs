@@ -1,6 +1,6 @@
-﻿namespace ProductInstaller
+﻿namespace InstallAssistant
 {
-	public static class Constants
+	public static class InstallerConstants
 	{
 		public const string ProductName = "{ProductName}";
 

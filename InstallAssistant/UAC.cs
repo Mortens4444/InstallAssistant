@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Windows.Forms;
 using MessageBoxes;
 
-namespace ProductInstaller
+namespace InstallAssistant
 {
 	public static class UAC
 	{
