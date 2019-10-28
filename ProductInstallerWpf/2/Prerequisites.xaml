@@ -5,9 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductInstallerWpf"
         mc:Ignorable="d"
-        Title="Prerequisites" Height="400" Width="485">
+        Title=" {InstallerTitle} Setup"
+		Height="400"
+		Width="485"
+		WindowStyle="None"
+		AllowsTransparency="True"
+		Background="Transparent"
+		WindowStartupLocation="CenterScreen"
+		MouseDown="Window_MouseDown">
 	<Window.DataContext>
 		<local:InstallerViewModel/>
 	</Window.DataContext>
+	
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/ProductInstallerWpf;component/ResourceDictionaries/Button.xaml"/>
+				<ResourceDictionary Source="pack://application:,,,/ProductInstallerWpf;component/ResourceDictionaries/TextBlock.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
 
+	<Border CornerRadius="{Binding AllCorners}" Background="{Binding BackgroundColor}">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="25" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="30" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="200" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition MaxWidth="50" />
+				<ColumnDefinition MaxWidth="50" />
+			</Grid.ColumnDefinitions>
+
+			<Image Source="/ProductInstallerWpf;component/Resources/VerticalLogo.png" Grid.Row="1" Grid.RowSpan="2" />
+
+			<Border Background="{Binding TitleColor}" CornerRadius="{Binding TopCorners}" Grid.ColumnSpan="4">
+				<TextBlock Name="WindowTitle" Text=" {InstallerTitle} Setup" VerticalAlignment="Center" Margin="10,0,0,0" />
+			</Border>
+
+			<TextBlock Style="{StaticResource BigFont}" Name="LblWelcome" Text="Welcome to the {ProductName} Setup Wizard" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" />
+			<TextBlock Text="The Setup Wizard will install {ProductName} and the following prerequisites on your computer. Click Next to continue or Cancel to exit the Setup Wizard." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,120,0,0" />
+			<ListView Background="{Binding ContentBackColor}" Name="LvPrerequisites" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,30,10,10" />
+
+			<Button Content="Next" Click="Next_Click" Grid.Row="3" Grid.Column="2" />
+			<Button Content="Cancel" Click="Cancel_Click" Grid.Row="3" Grid.Column="3" />
+		</Grid>
+	</Border>
 </Window>

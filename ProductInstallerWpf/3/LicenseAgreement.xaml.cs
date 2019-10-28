@@ -5,11 +5,11 @@ using InstallAssistant;
 namespace ProductInstallerWpf
 {
 	/// <summary>
-	/// Interaction logic for Prerequisites.xaml
+	/// Interaction logic for LicenseAgreement.xaml
 	/// </summary>
-	public partial class Prerequisites : Window
+	public partial class LicenseAgreement : Window
 	{
-		public Prerequisites(object installerViewModel)
+		public LicenseAgreement(object installerViewModel)
 		{
 			InitializeComponent();
 			DataContext = installerViewModel;
@@ -19,14 +19,22 @@ namespace ProductInstallerWpf
 
 		private void Next_Click(object sender, RoutedEventArgs e)
 		{
-			var licenseAgreement = new LicenseAgreement(DataContext);
-			licenseAgreement.Show();
+			var selectComponents = new SelectComponents(DataContext);
+			selectComponents.Show();
 			Close();
 		}
 
 		private void Cancel_Click(object sender, RoutedEventArgs e)
 		{
 			ExitIntent.Check();
+		}
+
+		private void Print_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void Back_Click(object sender, RoutedEventArgs e)
+		{
 		}
 
 		private void Window_MouseDown(object sender, MouseButtonEventArgs e)

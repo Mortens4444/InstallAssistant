@@ -12,9 +12,6 @@ namespace ProductInstallerWpf
 	/// </summary>
 	public partial class LanguageSelector : Window
 	{
-		private bool mouseClicked = false;
-		private Point lastMousePosition = new Point();
-
 		public LanguageSelector()
 		{
 			InitializeComponent();
@@ -39,7 +36,6 @@ namespace ProductInstallerWpf
 
 		private void Next_Click(object sender, RoutedEventArgs e)
 		{
-			ViewModel.Label = "Next";
 			var prerequisites = new Prerequisites(DataContext);
 			prerequisites.Show();
 			Close();
@@ -52,30 +48,9 @@ namespace ProductInstallerWpf
 
 		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			mouseClicked = true;
-			lastMousePosition = e.GetPosition(this);
-			lastMousePosition.Y = Convert.ToInt16(this.Top) + lastMousePosition.Y;
-			lastMousePosition.X = Convert.ToInt16(this.Left) + lastMousePosition.X;
-		}
-
-		private void Window_MouseUp(object sender, MouseButtonEventArgs e)
-		{
-			mouseClicked = false;
-		}
-
-		private void Window_MouseMove(object sender, MouseEventArgs e)
-		{
-			if (mouseClicked)
+			if (e.ChangedButton == MouseButton.Left)
 			{
-				var MousePosition = e.GetPosition(this);
-				var MousePositionAbs = new Point
-				{
-					X = Convert.ToInt16(Left) + MousePosition.X,
-					Y = Convert.ToInt16(Top) + MousePosition.Y
-				};
-				Left += MousePositionAbs.X - lastMousePosition.X;
-				Top += MousePositionAbs.Y - lastMousePosition.Y;
-				lastMousePosition = MousePositionAbs;
+				DragMove();
 			}
 		}
 	}

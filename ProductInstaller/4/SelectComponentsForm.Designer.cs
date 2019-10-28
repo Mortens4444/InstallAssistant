@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
 			this.GroupBox = new System.Windows.Forms.GroupBox();
+			this.BtnBack = new System.Windows.Forms.Button();
 			this.Label = new System.Windows.Forms.Label();
 			this.ComboBox = new System.Windows.Forms.ComboBox();
-			this.BtnExit = new System.Windows.Forms.Button();
-			this.BtnFinish = new System.Windows.Forms.Button();
+			this.BtnCancel = new System.Windows.Forms.Button();
+			this.BtnNext = new System.Windows.Forms.Button();
 			this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-			this.BtnBack = new System.Windows.Forms.Button();
 			this.GroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -43,8 +43,8 @@
 			this.GroupBox.Controls.Add(this.BtnBack);
 			this.GroupBox.Controls.Add(this.Label);
 			this.GroupBox.Controls.Add(this.ComboBox);
-			this.GroupBox.Controls.Add(this.BtnExit);
-			this.GroupBox.Controls.Add(this.BtnFinish);
+			this.GroupBox.Controls.Add(this.BtnCancel);
+			this.GroupBox.Controls.Add(this.BtnNext);
 			this.GroupBox.Controls.Add(this.LayoutPanel);
 			this.GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.GroupBox.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +52,17 @@
 			this.GroupBox.Size = new System.Drawing.Size(469, 361);
 			this.GroupBox.TabIndex = 1;
 			this.GroupBox.TabStop = false;
+			// 
+			// BtnBack
+			// 
+			this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnBack.DialogResult = System.Windows.Forms.DialogResult.No;
+			this.BtnBack.Location = new System.Drawing.Point(217, 328);
+			this.BtnBack.Name = "BtnBack";
+			this.BtnBack.Size = new System.Drawing.Size(78, 27);
+			this.BtnBack.TabIndex = 10;
+			this.BtnBack.Text = "Back";
+			this.BtnBack.UseVisualStyleBackColor = true;
 			// 
 			// Label
 			// 
@@ -74,27 +85,28 @@
 			this.ComboBox.TabIndex = 3;
 			this.ComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
 			// 
-			// BtnExit
+			// BtnCancel
 			// 
-			this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.BtnExit.Location = new System.Drawing.Point(385, 328);
-			this.BtnExit.Name = "BtnExit";
-			this.BtnExit.Size = new System.Drawing.Size(78, 27);
-			this.BtnExit.TabIndex = 2;
-			this.BtnExit.Text = "Exit";
-			this.BtnExit.UseVisualStyleBackColor = true;
-			this.BtnExit.Click += new System.EventHandler(this.BtnCancel_Click);
+			this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.BtnCancel.Location = new System.Drawing.Point(385, 328);
+			this.BtnCancel.Name = "BtnCancel";
+			this.BtnCancel.Size = new System.Drawing.Size(78, 27);
+			this.BtnCancel.TabIndex = 2;
+			this.BtnCancel.Text = "Cancel";
+			this.BtnCancel.UseVisualStyleBackColor = true;
+			this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
 			// 
-			// BtnFinish
+			// BtnNext
 			// 
-			this.BtnFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.BtnFinish.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.BtnFinish.Location = new System.Drawing.Point(301, 328);
-			this.BtnFinish.Name = "BtnFinish";
-			this.BtnFinish.Size = new System.Drawing.Size(78, 27);
-			this.BtnFinish.TabIndex = 0;
-			this.BtnFinish.Text = "Finish";
-			this.BtnFinish.UseVisualStyleBackColor = true;
+			this.BtnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.BtnNext.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.BtnNext.Location = new System.Drawing.Point(301, 328);
+			this.BtnNext.Name = "BtnNext";
+			this.BtnNext.Size = new System.Drawing.Size(78, 27);
+			this.BtnNext.TabIndex = 0;
+			this.BtnNext.Text = "Next";
+			this.BtnNext.UseVisualStyleBackColor = true;
 			// 
 			// LayoutPanel
 			// 
@@ -111,23 +123,12 @@
 			this.LayoutPanel.Size = new System.Drawing.Size(457, 281);
 			this.LayoutPanel.TabIndex = 1;
 			// 
-			// BtnBack
-			// 
-			this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.BtnBack.DialogResult = System.Windows.Forms.DialogResult.No;
-			this.BtnBack.Location = new System.Drawing.Point(217, 328);
-			this.BtnBack.Name = "BtnBack";
-			this.BtnBack.Size = new System.Drawing.Size(78, 27);
-			this.BtnBack.TabIndex = 10;
-			this.BtnBack.Text = "Back";
-			this.BtnBack.UseVisualStyleBackColor = true;
-			// 
 			// SelectComponentsForm
 			// 
-			this.AcceptButton = this.BtnFinish;
+			this.AcceptButton = this.BtnNext;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = this.BtnExit;
+			this.CancelButton = this.BtnCancel;
 			this.ClientSize = new System.Drawing.Size(469, 361);
 			this.Controls.Add(this.GroupBox);
 			this.MaximizeBox = false;
@@ -147,8 +148,8 @@
         #endregion
         private System.Windows.Forms.GroupBox GroupBox;
         private System.Windows.Forms.TableLayoutPanel LayoutPanel;
-        private System.Windows.Forms.Button BtnFinish;
-        private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Button BtnNext;
+        private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.ComboBox ComboBox;
 		private System.Windows.Forms.Button BtnBack;
