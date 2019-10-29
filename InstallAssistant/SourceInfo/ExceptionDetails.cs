@@ -26,18 +26,23 @@ namespace SourceInfo
         public ExceptionDetails(Exception ex)
         {
             firstException = ex;
-            var stackFrameDetails = new List<string> { StackDetails(ex) };
 
-            while (ex.InnerException != null)
-            {
-                ex = ex.InnerException;
-                var stackDetail = StackDetails(ex);
-                if (!String.IsNullOrEmpty(stackDetail))
+            #if DEBUG
+                var stackFrameDetails = new List<string> { StackDetails(ex) };
+                while (ex.InnerException != null)
                 {
-                    stackFrameDetails.Add(stackDetail);
+                    ex = ex.InnerException;
+                    var stackDetail = StackDetails(ex);
+                    if (!String.IsNullOrEmpty(stackDetail))
+                    {
+                        stackFrameDetails.Add(stackDetail);
+                    }
                 }
-            }
-            StackFrameDetials = stackFrameDetails.ToArray();
+                StackFrameDetials = stackFrameDetails.ToArray();
+            #else
+                StackFrameDetials = new string[0];
+            #endif
+
             Exception = ex;
             ExceptionType = ex.GetType().ToString();
         }
@@ -137,7 +142,7 @@ namespace SourceInfo
             {
                 stringBuilder.AppendLine(String.Format("Win32 NativeErrorCode: {0} - {1}", win32Exception.NativeErrorCode, (SystemErrorCodes)win32Exception.NativeErrorCode));
             }
-            #if !__MonoCS__
+#if !__MonoCS__
             else if (ex is ManagementException)
             {
                 if (((ManagementException)ex).ErrorInformation != null)
@@ -146,7 +151,7 @@ namespace SourceInfo
                     stringBuilder.AppendLine(Convert.ToString(((ManagementException)ex).ErrorInformation["Description"]));
                 }
             }
-            #endif
+#endif
         }
     }
 }

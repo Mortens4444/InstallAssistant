@@ -1,20 +1,26 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using SourceInfo;
 
 namespace InstallAssistant.Utils
 {
 	public class FileLogger
 	{
-		private readonly string fullFilename;
+		private readonly string filePath;
 		private readonly bool showdate;
 
-		public FileLogger(string folder, string filename, bool showdate = false)
+		public FileLogger(string filePath, bool showdate = false)
 		{
-			CreateFolderIfNotExists(folder);
-			fullFilename = Path.Combine(folder, filename);
+			CreateFolderIfNotExists(Path.GetDirectoryName(filePath));
+		    this.filePath = filePath;
 			this.showdate = showdate;
 		}
+
+	    public void Log(Exception exception)
+	    {
+            Log(exception.GetDetails());
+	    }
 
 		public void Log(params string[] loginfos)
 		{
@@ -44,7 +50,7 @@ namespace InstallAssistant.Utils
 
 		private void WriteToTextFile(string data)
 		{
-			using (var sw = File.AppendText(fullFilename))
+			using (var sw = File.AppendText(filePath))
 			{
 				sw.WriteLine(data);
 				sw.Close();

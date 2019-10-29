@@ -5,5 +5,7 @@
 		public const string ProductName = "{ProductName}";
 
 		public const string InstallerTitle = "{InstallerTitle}";
-	}
+
+		public const string InstallerLogSubPath = @"Product\Logs\Errors.log";
+    }
 }
