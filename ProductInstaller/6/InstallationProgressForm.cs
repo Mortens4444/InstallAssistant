@@ -11,6 +11,7 @@ namespace ProductInstaller._6
 			InitializeComponent();
 		    Lng.Translate(this);
 		    Text = Text.Replace(InstallerConstants.InstallerTitle, InstallerProperties.InstallerTitle);
+		    LblPleaseWait.Text = LblPleaseWait.Text.Replace(InstallerConstants.ProductName, InstallerProperties.ProductName);
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

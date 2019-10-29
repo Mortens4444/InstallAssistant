@@ -95,7 +95,7 @@
 			this.MinimumSize = new System.Drawing.Size(485, 400);
 			this.Name = "InstallationFinishedForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "InstallationFinishedForm";
+            this.Text = "{InstallerTitle} Setup";
 			this.LayoutPanel.ResumeLayout(false);
 			this.LayoutPanel.PerformLayout();
 			this.ResumeLayout(false);
