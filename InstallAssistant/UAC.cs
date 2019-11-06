@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
 using MessageBoxes;
@@ -20,6 +21,7 @@ namespace InstallAssistant
 					UseShellExecute = true,
 					WorkingDirectory = Environment.CurrentDirectory,
 					FileName = Application.ExecutablePath,
+					Arguments = String.Join(" ", Environment.GetCommandLineArgs().Skip(1).Select(arg => $"\"{arg}\"")),
 					Verb = "runas"
 				};
 				try

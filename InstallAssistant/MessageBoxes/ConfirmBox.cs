@@ -77,7 +77,7 @@ namespace MessageBoxes
 		{
 			var ok_seconds_left = new StringBuilder();
 			ok_seconds_left.Append(default_choose ? Yes : No);
-			ok_seconds_left.AppendFormat(" ({ProductName})", seconds_left);
+			ok_seconds_left.AppendFormat($" ({seconds_left})");
 			if (default_choose) btn_Yes.Text = ok_seconds_left.ToString();
 			else btn_No.Text = ok_seconds_left.ToString();
 		}
