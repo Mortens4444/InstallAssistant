@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using InstallAssistant.InstallSource;
+using InstallAssistant.Utils;
 using MessageBoxes;
 
 namespace InstallAssistant
@@ -18,7 +19,10 @@ namespace InstallAssistant
 				}
 				catch (Exception ex)
 				{
-					ErrorBox.Show(ex);
+				    var fileLogger = new FileLogger($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\{InstallerConstants.InstallerLogSubPath}");
+                    fileLogger.Log(ex);
+
+                    ErrorBox.Show(ex);
 				}
             }
         }

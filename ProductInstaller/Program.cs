@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InstallAssistant;
@@ -15,7 +13,7 @@ using ProductInstaller._7;
 
 namespace ProductInstaller
 {
-	static class Program
+    static class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
@@ -23,7 +21,7 @@ namespace ProductInstaller
 		[STAThread]
 		static void Main(string[] args)
 		{
-			new ExceptionCatcher(Assembly.GetExecutingAssembly().GetName().Name, true, true, true);
+			new ExceptionCatcher(InstallerConstants.InstallerLogSubPath, true, true, true);
 #if !DEBUG
 			UAC.Elevate();
 #endif
@@ -37,8 +35,7 @@ namespace ProductInstaller
 				DialogResult dialogResult;
 
 				Prerequisites:
-				var settingsFile = args == null || args.Length == 0 ? "settings.json" : args[0];
-				var installSequence = InstallSequenceBuilder.Get(settingsFile);
+				var installSequence = InstallSequenceBuilder.Get();
 				var prerequisitesForm = new PrerequisitesForm(installSequence.Installers);
 
 				if (!prerequisitesForm.IsDisposed)
@@ -67,14 +64,12 @@ namespace ProductInstaller
 					var welcomeForm = new WelcomeForm();
 					if ((dialogResult = welcomeForm.ShowDialog()) == DialogResult.No)
 					{
-						if (!prerequisitesForm.IsDisposed)
+					    if (!prerequisitesForm.IsDisposed)
 						{
 							goto Prerequisites;
 						}
-						else
-						{
-							goto LanguageSelection;
-						}
+
+					    goto LanguageSelection;
 					}
 
 					if (dialogResult == DialogResult.OK)
@@ -106,17 +101,18 @@ namespace ProductInstaller
 								if (dialogResult == DialogResult.OK)
 								{
 									var installationProgressForm = new InstallationProgressForm();
-									var task = Task.Factory.StartNew(() =>
+
+									Task.Factory.StartNew(() =>
 									{
 										SelectComponentsForm.InstallSequence.ExecuteEnabledInstallers();
-										installationProgressForm.Close();
-
-										var installationFinishedForm = new InstallationFinishedForm();
-										installationFinishedForm.ShowDialog();
+									    installationProgressForm.Invoke(new Action(() => { installationProgressForm.Close(); }));
 									});
 									installationProgressForm.ShowDialog();
-								}
-							}
+
+								    var installationFinishedForm = new InstallationFinishedForm();
+								    installationFinishedForm.ShowDialog();
+                                }
+                            }
 						}
 					}
 				}

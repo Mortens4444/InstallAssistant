@@ -12,8 +12,9 @@ namespace ProductInstaller._3
 	public sealed partial class LicenseAgreementForm : Form
 	{
 		private readonly ResourceProvider resourceProvider = new ResourceProvider();
+	    private StringReader stringReader;
 
-		public LicenseAgreementForm()
+        public LicenseAgreementForm()
 		{
 			InitializeComponent();
 			Lng.Translate(this);
@@ -22,7 +23,7 @@ namespace ProductInstaller._3
 			var assembly = Assembly.GetCallingAssembly();
 			var licenseFileStream = resourceProvider.GetResourceByShortName(assembly, "LicenseAgreement.rtf");
 			RtbLicenseAgreement.LoadFile(licenseFileStream, RichTextBoxStreamType.RichText);
-		}
+        }
 
 		private void BtnCancel_Click(object sender, EventArgs e)
 		{
@@ -31,6 +32,7 @@ namespace ProductInstaller._3
 
 		private void BtnPrint_Click(object sender, EventArgs e)
 		{
+		    stringReader = new StringReader(RtbLicenseAgreement.Text);
 			printDialog.Document = new PrintDocument();
 			printDialog.Document.PrintPage += Document_PrintPage;
 			if (printDialog.ShowDialog() == DialogResult.OK)
@@ -41,7 +43,6 @@ namespace ProductInstaller._3
 
 		private void Document_PrintPage(object sender, PrintPageEventArgs e)
 		{
-			var reader = new StringReader(RtbLicenseAgreement.Text);
 			var count = 0;
 			var printFont = RtbLicenseAgreement.Font;
 
@@ -50,7 +51,7 @@ namespace ProductInstaller._3
 				var linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics);
 
 				string line = null;
-				while (count < linesPerPage && ((line = reader.ReadLine()) != null))
+				while (count < linesPerPage && ((line = stringReader.ReadLine()) != null))
 				{
 					var y = e.MarginBounds.Top + (count * printFont.GetHeight(e.Graphics));
 					e.Graphics.DrawString(line, printFont, printBrush, e.MarginBounds.Left, y, new StringFormat());

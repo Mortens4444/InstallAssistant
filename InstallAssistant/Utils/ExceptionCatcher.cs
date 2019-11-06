@@ -11,19 +11,14 @@ namespace InstallAssistant.Utils
 		private readonly bool showUnhandledMessages;
 		private readonly FileLogger fileLogger;
 		private bool exitOnUnhandledException;
-		private readonly string unhandledExceptionsFolder;
 
-		public ExceptionCatcher() : this(String.Concat(Application.ProductName, " - ", Application.ProductVersion))
-		{ }
-
-		public ExceptionCatcher(string folder, bool showUnhandledMessages = true, bool exitOnUnhandledException = true, bool threadExceptionHandlerActivated = false)
+		public ExceptionCatcher(string logFileSubPath, bool showUnhandledMessages = true, bool exitOnUnhandledException = true, bool threadExceptionHandlerActivated = false)
 		{
 			Initialize(exitOnUnhandledException, threadExceptionHandlerActivated, UnhandledExceptionHandler);
 
 			this.showUnhandledMessages = showUnhandledMessages;
 
-			unhandledExceptionsFolder = $"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\\{folder}\\";
-			fileLogger = new FileLogger(unhandledExceptionsFolder, "unhandled_exceptions.log");
+			fileLogger = new FileLogger($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\{logFileSubPath}");
 		}
 
 		public ExceptionCatcher(bool exitOnUnhandledException = true, bool threadExceptionHandlerActivated = false)
@@ -48,7 +43,7 @@ namespace InstallAssistant.Utils
 		private void ThreadExceptionHandler(object sender, ThreadExceptionEventArgs e)
 		{
 			var thread = sender as Thread;
-			var exception = thread == null ? e.Exception : new Exception("Exception occured on the following thread: {s.Name}", e.Exception);
+			var exception = thread == null ? e.Exception : new Exception("Exception occurred on the following thread: {s.Name}", e.Exception);
 			HandleException(exception);
 		}
 
